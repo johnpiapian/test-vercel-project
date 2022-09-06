@@ -12,9 +12,24 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href='#'>my website</a>!
-        </h1>
+        <section>
+          <h1 className={styles.title}>
+            Welcome to <a href='#'>my website</a>!
+          </h1>
+        </section>
+        <section>
+          <article className={styles.article}>
+            <p>
+              <b>Name:</b> John
+            </p>
+            <p>
+              <b>Age:</b> 23
+            </p>
+            <p>
+              <b>Sex:</b> Male
+            </p>
+          </article>
+        </section>
       </main>
 
       <footer className={styles.footer}>
