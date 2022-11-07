@@ -14,7 +14,7 @@ export default function Home() {
       <main className={styles.main}>
         <section>
           <h1 className={styles.title}>
-            Welcome to <a href='#'>my website</a>!
+            Welcome to <a href='#'>my website</a>!!
           </h1>
         </section>
         <section>
