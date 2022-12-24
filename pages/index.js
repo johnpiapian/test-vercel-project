@@ -1,8 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useState } from 'react'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Home({article}) {   
+  
+  console.log(article);
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -14,19 +18,19 @@ export default function Home() {
       <main className={styles.main}>
         <section>
           <h1 className={styles.title}>
-            Welcome to <a href='#'>my website</a>!
+            Welcome to <a href='#'>my website</a>!!
           </h1>
         </section>
         <section>
           <article className={styles.article}>
             <p>
-              <b>Name:</b> John
+              <b>Name: </b>{article.name}
             </p>
             <p>
-              <b>Age:</b> 23
+              <b>Age: </b>{article.age}
             </p>
             <p>
-              <b>Sex:</b> Male
+              <b>Sex: </b>{article.sex}
             </p>
           </article>
         </section>
@@ -37,4 +41,16 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+
+export async function getServerSideProps() {
+  const res = await fetch("http://localhost:3000/api/person");
+  let data = await res.json()
+
+  return {
+    props: {
+      article: data
+    }
+  }
 }
