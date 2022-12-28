@@ -45,7 +45,8 @@ export default function Home({article}) {
 
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/person");
+  const domain = "https://test-vercel-project-e7cjz3vc1-johnpiapian.vercel.app/";
+  const res = await fetch(`${domain}/api/person`);
   let data = await res.json()
 
   return {
